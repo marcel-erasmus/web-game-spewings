@@ -12,22 +12,84 @@
         <script src="scripts.js"></script>
     </head>
     <body>
+        <div class="overlay hidden">
+        </div>
+        <div class="modal hidden">
+            <div class="modal-title"></div>
+            <div class="modal-body"></div>
+            <div class="modal-actions"></div>
+        </div>
+
         <!-- START: HEADER -->
         <header>
             <!-- START: NAV -->
             <nav>
                 <div class="nav-content">
                     <div class="nav-logo">
+                        SpEwInGs
+                    </div>
+                    <div class="container-lives-summary hidden">
+                        <span><img class="life-summary-icon life" src="https://images2.imgbox.com/91/a4/4GDp7JQK_o.png" alt="heart"></span>
+                        <div class="life-summary-value"></div>
                     </div>
                     <div class="nav-menu-actions">
+                        <i class="ri-refresh-line button-reset button-reset-icon interactable"></i>
+                        <i class="button-menu interactable ri-menu-3-line"></i>
                     </div>
                 </div>
             </nav>
             <!-- END: NAV -->
         </header>
+
+        <div class="nav-menu">
+            <ul>
+                <li class="button-menu-dismiss interactable">
+                    <i class="nav-link-icon ri-close-line"></i>
+                </li>
+                <li class="button-reset interactable">
+                    <i class="nav-link-icon ri-arrow-right-s-line"></i> Restart
+                </li>
+                <li class="button-about interactable">
+                    <i class="nav-link-icon ri-arrow-right-s-line"></i> About
+                </li>
+            </ul>
+        </div>
         <!-- END: HEADER -->
 
         <main>
+            <div style="height: 75px;"></div>
+            
+            <div class="container-lives"></div>
+            <div class="container-current-word"></div>
+
+            <div class="container-letter-input">
+                <input type="button" class="button-letter-input" value="A"></input>
+                <input type="button" class="button-letter-input" value="B"></input>
+                <input type="button" class="button-letter-input" value="C"></input>
+                <input type="button" class="button-letter-input" value="D"></input>
+                <input type="button" class="button-letter-input" value="E"></input>
+                <input type="button" class="button-letter-input" value="F"></input>
+                <input type="button" class="button-letter-input" value="G"></input>
+                <input type="button" class="button-letter-input" value="H"></input>
+                <input type="button" class="button-letter-input" value="I"></input>
+                <input type="button" class="button-letter-input" value="J"></input>
+                <input type="button" class="button-letter-input" value="K"></input>
+                <input type="button" class="button-letter-input" value="L"></input>
+                <input type="button" class="button-letter-input" value="M"></input>
+                <input type="button" class="button-letter-input" value="N"></input>
+                <input type="button" class="button-letter-input" value="O"></input>
+                <input type="button" class="button-letter-input" value="P"></input>
+                <input type="button" class="button-letter-input" value="Q"></input>
+                <input type="button" class="button-letter-input" value="R"></input>
+                <input type="button" class="button-letter-input" value="S"></input>
+                <input type="button" class="button-letter-input" value="T"></input>
+                <input type="button" class="button-letter-input" value="U"></input>
+                <input type="button" class="button-letter-input" value="V"></input>
+                <input type="button" class="button-letter-input" value="W"></input>
+                <input type="button" class="button-letter-input" value="X"></input>
+                <input type="button" class="button-letter-input" value="Y"></input>
+                <input type="button" class="button-letter-input" value="Z"></input>
+            </div>
         </main>
     </body>
 </html>
