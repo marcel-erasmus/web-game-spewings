@@ -1,59 +1,209 @@
 const dictionary = [
-    'apples',
-    'lettuce',
-    'Amsterdam',
-    'carnivore',
-    'radiation',
-    'morphine',
-    'happy',
-    'cadaver',
-    'cow',
-    'violent',
-    'clairvoyance',
-    'Kosmikophobia',
-    'swimming',
-    'cannibal',
-    'yellow',
-    'amazing',
-    'camera',
-    'exciting',
-    'reluctant',
-    'global',
-    'electrodynamometer',
-    'whiteboard',
-    'swine',
-    'utilitarianism',
-    'destruction',
-    'disaster',
-    'verbose',
-    'window',
-    'New York',
-    'shark',
-    'yarn',
-    'paint',
-    'avocado',
-    'photograph',
-    'violin',
-    'colorless',
-    'guitar',
-    'basin',
-    'Micropalaeontology',
-    'Verminophobia',
-    'victory',
-    'fundamental',
-    'whippersnappers',
-    'pseudoantidisestablishmentarianism',
-    'Microsoft',
-    'butter',
-    'rafters',
-    'uncompartmentalized',
-    'ridiculous',
-    'rodomontadist'
+    { 
+        word: 'apples',
+        hint: 'A common fruit that contains two Ps.'
+    },
+    { 
+        word: 'lettuce',
+        hint: 'One of the most common salad ingredients.'
+    },
+    { 
+        word: 'Amsterdam',
+        hint: 'A city in Europe that is said to have more bicycles than people.'
+    },
+    { 
+        word: 'carnivore',
+        hint: '"Meat good."'
+    },
+    { 
+        word: 'radiation',
+        hint: 'A word that rhymes with "meditation".'
+    },
+    { 
+        word: 'morphine',
+        hint: '"Make the pain go away..."' 
+    },
+    { 
+        word: 'happy',
+        hint: 'An emotion.' 
+    },
+    { 
+        word: 'cadaver',
+        hint: 'A macabre word that rhymes with "father".'
+    },
+    { 
+        word: 'cow',
+        hint: 'Moo...'
+    },
+    { 
+        word: 'violent',
+        hint: 'Using or involving physical force intended to hurt, damage, or kill someone or something.'
+    },
+    { 
+        word: 'clairvoyance',
+        hint: 'The supposed faculty of perceiving things or events in the future or beyond normal sensory contact.'
+    },
+    { 
+        word: 'Kosmikophobia',
+        hint: 'The fear of cosmic phenomena.'
+    },
+    { 
+        word: 'swimming', 
+        hint: 'Contains some of the letters from the word "swine".'
+    },
+    { 
+        word: 'cannibal',
+        hint: '"Looks like meat\'s back on the menu boys!"'
+    },
+    { 
+        word: 'yellow',
+        hint: 'A colour.'
+    },
+    { 
+        word: 'amazing',
+        hint: 'This word contains some of the letters of the word "fungal".'
+    },
+    { 
+        word: 'camera',
+        hint: 'A device invented in 1816 by a French dude.'
+    },
+    { 
+        word: 'exciting',
+        hint: 'If you hear this word in a work context... Run.'
+    },
+    { 
+        word: 'reluctant',
+        hint: 'Disinclined.'
+    },
+    { 
+        word: 'global',
+        hint: '"All over the world."'
+    },
+    { 
+        word: 'electrodynamometer',
+        hint: 'These instruments are very useful for accurate measurements of the RMS value of voltage irrespective of the waveform.'
+    },
+    { 
+        word: 'whiteboard',
+        hint: 'A rather scary object in software engineering interviews.'
+    },
+    { 
+        word: 'swine',
+        hint: '"Hmm... Pork."'
+    },
+    { 
+        word: 'utilitarianism',
+        hint: 'The doctrine that actions are right if they are useful or for the benefit of a majority.'
+    },
+    { 
+        word: 'destruction',
+        hint: 'The action or process of causing so much damage to something that it no longer exists or cannot be repaired.'
+    },
+    { 
+        word: 'disaster',
+        hint: 'A sudden accident or a natural catastrophe that causes great damage or loss of life.'
+    },
+    { 
+        word: 'verbose',
+        hint: 'Using or expressed in more words than are needed.'
+    },
+    { 
+        word: 'window',
+        hint: 'Without these, structures such as houses would be quite dark in general.'
+    },
+    { 
+        word: 'New York',
+        hint: 'Originally called New Amsterdam.'
+    },
+    { 
+        word: 'shark',
+        hint: 'Jaws.'
+    },
+    { 
+        word: 'yarn',
+        hint: 'Spun thread used for knitting, weaving, or sewing.'
+    },
+    { 
+        word: 'paint',
+        hint: 'A coloured substance which is spread over a surface and dries to leave a thin decorative or protective coating.'
+    },
+    { 
+        word: 'avocado',
+        hint: 'Testicle fruit.'
+    },
+    { 
+        word: 'photograph',
+        hint: 'Nickelback has a song that\s titled after this word.'
+    },
+    { 
+        word: 'violin',
+        hint: 'A device that can be used to make music.'
+    },
+    { 
+        word: 'colourless',
+        hint: 'An adjective that can used to describe a distaste for a visual object.'
+    },
+    { 
+        word: 'guitar',
+        hint: 'An object that is used to produce noise which humans call "music".'
+    },
+    { 
+        word: 'basin',
+        hint: 'This word contains some of the letters of the word "pizza".'
+    },
+    { 
+        word: 'Micropalaeontology',
+        hint: 'The study of fossils that require the use of a microscope to see the organism, its morphology and its characteristic details.'
+    },
+    { 
+        word: 'Verminophobia',
+        hint: 'Germs be scary.'
+    },
+    { 
+        word: 'victory',
+        hint: 'An outcome or condition sought after by many.'
+    },
+    { 
+        word: 'fundamental',
+        hint: 'Forming a necessary base or core; of central importance.'
+    },
+    { 
+        word: 'whippersnappers',
+        hint: 'Young and inexperienced people considered to be presumptuous or overconfident.'
+    },
+    { 
+        word: 'pseudoantidisestablishmentarianism',
+        hint: 'False opposition to the separation of church and of the state.'
+    },
+    { 
+        word: 'Microsoft',
+        hint: 'A rather large American company.'
+    },
+    { 
+        word: 'butter',
+        hint: 'A substance made by churning cream.'
+    },
+    { 
+        word: 'rafters',
+        hint: 'Parts of the internal framework of a roof.'
+    },
+    { 
+        word: 'uncompartmentalised',
+        hint: 'Not divided into isolated units.'
+    },
+    { 
+        word: 'ridiculous',
+        hint: 'Deserving or inviting derision or mockery; absurd.'
+    },
+    { 
+        word: 'rodomontadist',
+        hint: 'A person who boasts.'
+    }
 ]
 
 const DEFAULT_LIVES = 6
 
-let targetWord = []
+let targetWord = {}
 let wordCharacters = []
 
 let lives = DEFAULT_LIVES
@@ -76,6 +226,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.button-reset').forEach((button) => {
         button.addEventListener('click', clickButtonReset)
+    })
+
+    document.querySelectorAll('.button-hint').forEach((button) => {
+        button.addEventListener('click', clickButtonHint)
     })
 
     document.querySelectorAll('.button-about').forEach((button) => {
@@ -101,6 +255,15 @@ function clickButtonReset() {
     presentModal(getResetConfirmationModal())
 }
 
+function clickButtonHint() {
+    document.querySelectorAll('.button-hint').forEach((button) => {
+        button.classList.add("hidden")
+    })
+
+    dismissMenu()
+    presentModal(getHintModal())
+}
+
 function clickButtonAbout() {
     dismissMenu()
     presentModal(getAboutModal())
@@ -123,9 +286,15 @@ function resetWord() {
 
     targetWord = dictionary[Math.floor(Math.random() * dictionary.length)]
 
-    wordCharacters = getFilledCurrentWord(targetWord)
+    wordCharacters = getFilledCurrentWord(targetWord.word)
 
     resetCurrentWordComponent(wordCharacters)
+
+    if (winStreak % 2 == 0) {
+        document.querySelectorAll('.button-hint').forEach((button) => {
+            button.classList.remove('hidden')
+        })
+    }
 }
 
 function resetCurrentWordComponent(currentWord) {
@@ -194,7 +363,7 @@ function updateLifeSummaryValueComponent() {
 function getFilledCurrentWord(word) {
     let results = []
     for (let i = 0; i < word.length; i++) {
-        if (word[i] === ' ' || word[i] === '-') {
+        if (word[i] === ' ' || word[i].word === '-') {
             results.push(word[i])
         } else {
             results.push('?')
@@ -216,12 +385,12 @@ function selectLetter(e) {
 }
 
 function matchLetter(letter) {
-    const transformedTargetWord = targetWord.toUpperCase()
+    const transformedTargetWord = targetWord.word.toUpperCase()
     let match = false;
 
-    for (let i = 0; i < targetWord.length; i++) {
+    for (let i = 0; i < targetWord.word.length; i++) {
         if (transformedTargetWord[i] === letter) {
-            wordCharacters[i] = targetWord[i]
+            wordCharacters[i] = targetWord.word[i]
 
             match = true
 
@@ -385,7 +554,7 @@ function getCorrectWordModal() {
         '<div>' +
             '<div class="mood-positive-text ri-check-line" style="font-size: 4rem;"></div></br>' +
             '<div>Good job, you got it!</div></br>' +
-            `<div class="mood-positive-text">${targetWord}</div></br>` +
+            `<div class="mood-positive-text">${targetWord.word}</div></br>` +
             `<div class="mood-neutral-text">Streak: ${winStreak}</div></br></br>` +
         '</div>'
 
@@ -413,12 +582,35 @@ function getGameOverModal() {
             '<div class="mood-negative-text" style="font-size: 4rem;">:(</div></br>' +
             '<div>How very dead...</div></br>' +
             '<div>The word that did you in was:</div>' +
-            `<div class="mood-negative-text">${targetWord}</div></br>` +
+            `<div class="mood-negative-text">${targetWord.word}</div></br>` +
             `<div class="mood-neutral-text">Streak: ${winStreak}</div></br></br>` +
         '</div>'
 
     let button = document.createElement('button')
     button.innerText = 'Try Again';
+
+    button.addEventListener('click', () => {
+        dismissModal()
+    })
+
+    return {
+        modalTitle: modalTitle,
+        modalBody: modalBody,
+        modalActions: [button]
+    }
+}
+
+function getHintModal() {
+    let modalTitle = 'HINT</br></br>'
+
+    let modalBody = 
+        '<div>' +
+            `<div class="ri-question-mark mood-positive-text" style="font-size: 4rem;"></div></br>` +
+            `<div>${targetWord.hint}</div></br></br>` +
+        '</div>'
+
+    let button = document.createElement('button')
+    button.innerText = 'Okay';
 
     button.addEventListener('click', () => {
         dismissModal()
@@ -438,7 +630,7 @@ function getAboutModal() {
         '<div>' +
             '<div><span class="mood-neutral-text">SpEwInGs</span> is a word guessing game loosely based on Hangman.</div></br>' +
             '<div>You suggest letters to fill in the missing letters of the unknown word.</div></br>' +
-            '<div class="mood-neutral-text">VOIDWORKS<span class="blink">_</span></div></br></br>'
+            '<div class="mood-neutral-text">VOIDWORKS<span class="blink">_</span></div></br></br>' +
         '</div>'
 
     let button = document.createElement('button')

@@ -111,7 +111,6 @@ nav {
 
 .button-menu {
     display: inline-flex;
-    margin-right: 1rem;
     z-index: 1;
     font-size: 2rem;
 }
@@ -162,8 +161,8 @@ nav {
     height: 75vh;
     min-width: 300px;
     max-width: var(--max-width-default);
-    background-color: white;
-    color: black;
+    background-color: #ffffff;
+    color: #000000;
     border-radius: calc(var(--border-radius-default) * 4);
     overflow-y: auto;
     animation: fadein-modal 0.5s;
@@ -270,7 +269,7 @@ button:hover, .button-letter-input:hover {
     background-color: #000000;
 }
 
-.button-reset-icon {
+.nav-menu-actions .interactable {
     padding-right: 1rem;
 }
 
