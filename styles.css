@@ -216,7 +216,7 @@ nav {
 /* ==================== START: ANIMATION */
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 .interactable:hover {
@@ -274,6 +274,20 @@ button:hover, .button-letter-input:hover {
 }
 
 /* ==================== END: BUTTON */
+
+/* ==================== START: LOADER */
+
+.container-loader {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    width: 100%;
+    min-height: 100vh;
+    color: #ffffff;
+}
+
+/* ==================== END: LOADER */
 
 /* ==================== START: CURRENT WORD */
 
@@ -387,7 +401,7 @@ button:hover, .button-letter-input:hover {
 
 @media screen and (max-width: 800px) {
     .container-lives-summary {
-        display: flex;
+        display: flex !important;
         align-items: center;
         margin-left: 1rem;
     }

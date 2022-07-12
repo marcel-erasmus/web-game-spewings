@@ -1,207 +1,7 @@
-const dictionary = [
-    { 
-        word: 'apples',
-        hint: 'A common fruit that contains two Ps.'
-    },
-    { 
-        word: 'lettuce',
-        hint: 'One of the most common salad ingredients.'
-    },
-    { 
-        word: 'Amsterdam',
-        hint: 'A city in Europe that is said to have more bicycles than people.'
-    },
-    { 
-        word: 'carnivore',
-        hint: '"Meat good."'
-    },
-    { 
-        word: 'radiation',
-        hint: 'A word that rhymes with "meditation".'
-    },
-    { 
-        word: 'morphine',
-        hint: '"Make the pain go away..."' 
-    },
-    { 
-        word: 'happy',
-        hint: 'An emotion.' 
-    },
-    { 
-        word: 'cadaver',
-        hint: 'A macabre word that rhymes with "father".'
-    },
-    { 
-        word: 'cow',
-        hint: 'Moo...'
-    },
-    { 
-        word: 'violent',
-        hint: 'Using or involving physical force intended to hurt, damage, or kill someone or something.'
-    },
-    { 
-        word: 'clairvoyance',
-        hint: 'The supposed faculty of perceiving things or events in the future or beyond normal sensory contact.'
-    },
-    { 
-        word: 'Kosmikophobia',
-        hint: 'The fear of cosmic phenomena.'
-    },
-    { 
-        word: 'swimming', 
-        hint: 'Contains some of the letters from the word "swine".'
-    },
-    { 
-        word: 'cannibal',
-        hint: '"Looks like meat\'s back on the menu boys!"'
-    },
-    { 
-        word: 'yellow',
-        hint: 'A colour.'
-    },
-    { 
-        word: 'amazing',
-        hint: 'This word contains some of the letters of the word "fungal".'
-    },
-    { 
-        word: 'camera',
-        hint: 'A device invented in 1816 by a French dude.'
-    },
-    { 
-        word: 'exciting',
-        hint: 'If you hear this word in a work context... Run.'
-    },
-    { 
-        word: 'reluctant',
-        hint: 'Disinclined.'
-    },
-    { 
-        word: 'global',
-        hint: '"All over the world."'
-    },
-    { 
-        word: 'electrodynamometer',
-        hint: 'These instruments are very useful for accurate measurements of the RMS value of voltage irrespective of the waveform.'
-    },
-    { 
-        word: 'whiteboard',
-        hint: 'A rather scary object in software engineering interviews.'
-    },
-    { 
-        word: 'swine',
-        hint: '"Hmm... Pork."'
-    },
-    { 
-        word: 'utilitarianism',
-        hint: 'The doctrine that actions are right if they are useful or for the benefit of a majority.'
-    },
-    { 
-        word: 'destruction',
-        hint: 'The action or process of causing so much damage to something that it no longer exists or cannot be repaired.'
-    },
-    { 
-        word: 'disaster',
-        hint: 'A sudden accident or a natural catastrophe that causes great damage or loss of life.'
-    },
-    { 
-        word: 'verbose',
-        hint: 'Using or expressed in more words than are needed.'
-    },
-    { 
-        word: 'window',
-        hint: 'Without these, structures such as houses would be quite dark in general.'
-    },
-    { 
-        word: 'New York',
-        hint: 'Originally called New Amsterdam.'
-    },
-    { 
-        word: 'shark',
-        hint: 'Jaws.'
-    },
-    { 
-        word: 'yarn',
-        hint: 'Spun thread used for knitting, weaving, or sewing.'
-    },
-    { 
-        word: 'paint',
-        hint: 'A coloured substance which is spread over a surface and dries to leave a thin decorative or protective coating.'
-    },
-    { 
-        word: 'avocado',
-        hint: 'Testicle fruit.'
-    },
-    { 
-        word: 'photograph',
-        hint: 'Nickelback has a song that\s titled after this word.'
-    },
-    { 
-        word: 'violin',
-        hint: 'A device that can be used to make music.'
-    },
-    { 
-        word: 'colourless',
-        hint: 'An adjective that can used to describe a distaste for a visual object.'
-    },
-    { 
-        word: 'guitar',
-        hint: 'An object that is used to produce noise which humans call "music".'
-    },
-    { 
-        word: 'basin',
-        hint: 'This word contains some of the letters of the word "pizza".'
-    },
-    { 
-        word: 'Micropalaeontology',
-        hint: 'The study of fossils that require the use of a microscope to see the organism, its morphology and its characteristic details.'
-    },
-    { 
-        word: 'Verminophobia',
-        hint: 'Germs be scary.'
-    },
-    { 
-        word: 'victory',
-        hint: 'An outcome or condition sought after by many.'
-    },
-    { 
-        word: 'fundamental',
-        hint: 'Forming a necessary base or core; of central importance.'
-    },
-    { 
-        word: 'whippersnappers',
-        hint: 'Young and inexperienced people considered to be presumptuous or overconfident.'
-    },
-    { 
-        word: 'pseudoantidisestablishmentarianism',
-        hint: 'False opposition to the separation of church and of the state.'
-    },
-    { 
-        word: 'Microsoft',
-        hint: 'A rather large American company.'
-    },
-    { 
-        word: 'butter',
-        hint: 'A substance made by churning cream.'
-    },
-    { 
-        word: 'rafters',
-        hint: 'Parts of the internal framework of a roof.'
-    },
-    { 
-        word: 'uncompartmentalised',
-        hint: 'Not divided into isolated units.'
-    },
-    { 
-        word: 'ridiculous',
-        hint: 'Deserving or inviting derision or mockery; absurd.'
-    },
-    { 
-        word: 'rodomontadist',
-        hint: 'A person who boasts.'
-    }
-]
-
 const DEFAULT_LIVES = 6
+
+let dictionary = []
+let wordPool = []
 
 let targetWord = {}
 let wordCharacters = []
@@ -213,7 +13,18 @@ let currentWordComponents = []
 
 let lifeComponents = []
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+    dictionary = await getDictionary()
+
+    if (dictionary.length == 0) {
+        document.querySelector('.container-loader').innerText = 'Unable to obtain dictionary...'
+        
+        return
+    } else {
+        document.querySelector('.container-loader').classList.add('hidden')
+        document.querySelector('.container-main').classList.remove('hidden')
+    }
+
     document.querySelector('.button-menu').addEventListener('click', presentMenu)
 
     document.querySelectorAll('.button-menu-dismiss').forEach((button) => {
@@ -243,6 +54,18 @@ document.addEventListener('DOMContentLoaded', () => {
     resetGame()
 })
 
+async function getDictionary() {
+    const response = await fetch('https://gist.githubusercontent.com/VoidBeans/f3d777ee297d0e26955a2fdfa21a20ce/raw/a46e976c7aa8f5c56ca1fb976529b09455bddfd1/web-game-spewings-dictionary.json')
+
+    if (response.ok) {
+        return await response.json();
+    } else {
+        console.log("HTTP Status: " + response.status);
+
+        return []
+    }
+  }
+
 // ==================== START: CLICK EVENTS
 
 function clickOverlay() {
@@ -252,26 +75,24 @@ function clickOverlay() {
 
 function clickButtonReset() {
     dismissMenu()
-    presentModal(getResetConfirmationModal())
+    presentModal(getResetConfirmationModalContent())
 }
 
 function clickButtonHint() {
-    document.querySelectorAll('.button-hint').forEach((button) => {
-        button.classList.add("hidden")
-    })
-
     dismissMenu()
-    presentModal(getHintModal())
+    presentModal(getHintModalContent())
 }
 
 function clickButtonAbout() {
     dismissMenu()
-    presentModal(getAboutModal())
+    presentModal(getAboutModalContent())
 }
 
 // ==================== END: CLICK EVENTS
 
 function resetGame() {
+    wordPool = [...dictionary]
+
     lives = DEFAULT_LIVES
     winStreak = 0
 
@@ -281,20 +102,23 @@ function resetGame() {
 }
 
 function resetWord() {
-    resetCharacterComponents()
-    resetLetterInputComponents()
+    let randomWordIndex = Math.floor(Math.random() * wordPool.length)
 
-    targetWord = dictionary[Math.floor(Math.random() * dictionary.length)]
+    targetWord = wordPool[randomWordIndex]
+
+    wordPool.splice(randomWordIndex, 1)
+
+    if (wordPool.length == 0) {
+        wordPool = [...dictionary]
+    }
 
     wordCharacters = getFilledCurrentWord(targetWord.word)
 
+    resetCharacterComponents()
+    resetLetterInputComponents()
     resetCurrentWordComponent(wordCharacters)
 
-    if (winStreak % 2 == 0) {
-        document.querySelectorAll('.button-hint').forEach((button) => {
-            button.classList.remove('hidden')
-        })
-    }
+    window.scrollTo(0, 0)
 }
 
 function resetCurrentWordComponent(currentWord) {
@@ -370,11 +194,11 @@ function getFilledCurrentWord(word) {
         }
     }
 
-    return results;
+    return results
 }
 
 function selectLetter(e) {
-    const button = e.target;
+    const button = e.target
     const pickedLetter = button.value
 
     button.removeEventListener('click', selectLetter, false)
@@ -386,7 +210,7 @@ function selectLetter(e) {
 
 function matchLetter(letter) {
     const transformedTargetWord = targetWord.word.toUpperCase()
-    let match = false;
+    let match = false
 
     for (let i = 0; i < targetWord.word.length; i++) {
         if (transformedTargetWord[i] === letter) {
@@ -407,13 +231,13 @@ function matchLetter(letter) {
 
         incrementLives()
 
-        presentModal(getCorrectWordModal())
+        presentModal(getCorrectWordModalContent())
         resetWord()
     } 
 }
 
 function incrementLives() {
-    if (lives < 6) {
+    if (lives < DEFAULT_LIVES) {
         lives += 1
     }
 
@@ -438,7 +262,7 @@ function decrementLives() {
     updateLifeSummaryValueComponent()
 
     if (lives <= 0) {
-        presentModal(getGameOverModal())
+        presentModal(getGameOverModalContent())
         
         resetGame()
 
@@ -481,11 +305,11 @@ function dismissMenu() {
 //  ==================== START: MODAL
 
 function presentModal(modalContent) {
+    const overlay = document.querySelector('.overlay')
+    const modal = document.querySelector('.modal')
     const modalTitleComponent = document.querySelector('.modal-title')
     const modalBodyComponent = document.querySelector('.modal-body')
     const modalActionsComponent = document.querySelector('.modal-actions')
-    const overlay = document.querySelector('.overlay')
-    const modal = document.querySelector('.modal')
 
     modalTitleComponent.replaceChildren()
     modalBodyComponent.replaceChildren()
@@ -505,8 +329,10 @@ function presentModal(modalContent) {
         })
     }
 
-    modal.classList.remove('hidden')
     overlay.classList.remove('hidden')
+    modal.classList.remove('hidden')
+
+    modal.scrollTop = 0
 }
 
 function dismissModal() {
@@ -514,7 +340,7 @@ function dismissModal() {
     document.querySelector('.overlay').classList.add('hidden')
 }
 
-function getResetConfirmationModal() {
+function getResetConfirmationModalContent() {
     let modalTitle = 'CONFIRMATION</br></br>'
     
     let modalBody = 
@@ -547,7 +373,7 @@ function getResetConfirmationModal() {
     }
 }
 
-function getCorrectWordModal() {
+function getCorrectWordModalContent() {
     let modalTitle = 'CORRECT</br></br>'
     
     let modalBody = 
@@ -564,7 +390,6 @@ function getCorrectWordModal() {
 
     button.addEventListener('click', () => {
         dismissModal()
-        resetWord() 
     })
 
     return {
@@ -574,7 +399,7 @@ function getCorrectWordModal() {
     }
 }
 
-function getGameOverModal() {
+function getGameOverModalContent() {
     let modalTitle = 'GAME OVER</br></br>'
 
     let modalBody = 
@@ -587,7 +412,7 @@ function getGameOverModal() {
         '</div>'
 
     let button = document.createElement('button')
-    button.innerText = 'Try Again';
+    button.innerText = 'Try Again'
 
     button.addEventListener('click', () => {
         dismissModal()
@@ -600,7 +425,7 @@ function getGameOverModal() {
     }
 }
 
-function getHintModal() {
+function getHintModalContent() {
     let modalTitle = 'HINT</br></br>'
 
     let modalBody = 
@@ -610,7 +435,7 @@ function getHintModal() {
         '</div>'
 
     let button = document.createElement('button')
-    button.innerText = 'Okay';
+    button.innerText = 'Okay'
 
     button.addEventListener('click', () => {
         dismissModal()
@@ -623,7 +448,7 @@ function getHintModal() {
     }
 }
 
-function getAboutModal() {
+function getAboutModalContent() {
     let modalTitle = 'ABOUT</br></br>'
 
     let modalBody = 
@@ -634,7 +459,7 @@ function getAboutModal() {
         '</div>'
 
     let button = document.createElement('button')
-    button.innerText = 'Okay';
+    button.innerText = 'Okay'
 
     button.addEventListener('click', () => {
         dismissModal()
