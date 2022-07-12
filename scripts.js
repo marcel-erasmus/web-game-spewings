@@ -58,9 +58,9 @@ async function getDictionary() {
     const response = await fetch('https://gist.githubusercontent.com/VoidBeans/f3d777ee297d0e26955a2fdfa21a20ce/raw/a46e976c7aa8f5c56ca1fb976529b09455bddfd1/web-game-spewings-dictionary.json')
 
     if (response.ok) {
-        return await response.json();
+        return await response.json()
     } else {
-        console.log("HTTP Status: " + response.status);
+        console.log("HTTP Status: " + response.status)
 
         return []
     }
