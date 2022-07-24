@@ -2,4 +2,4 @@ SpEwInGs is a word guessing game loosely based on [Hangman](https://en.wikipedia
 
 Blasphemously built without React or any frontend framework.
 
-Experience the thrill over on [Codepen](https://tinyurl.com/yhbuedw2).
+Experience the thrill on thy [browser](https://voidbeans.github.io/web-game-spewings/).
