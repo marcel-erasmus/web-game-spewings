@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 })
 
 async function getDictionary() {
-    const response = await fetch('https://gist.githubusercontent.com/VoidBeans/f3d777ee297d0e26955a2fdfa21a20ce/raw/a46e976c7aa8f5c56ca1fb976529b09455bddfd1/web-game-spewings-dictionary.json')
+    const response = await fetch('https://gist.githubusercontent.com/marcel-erasmus/f3d777ee297d0e26955a2fdfa21a20ce/raw/a46e976c7aa8f5c56ca1fb976529b09455bddfd1/web-game-spewings-dictionary.json')
 
     if (response.ok) {
         return await response.json()
